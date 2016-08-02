@@ -1,12 +1,12 @@
 FactoryGirl.define do
   factory :project do
-    name "MyString"
-    user "MyString"
-    category "MyString"
-    location "MyString"
-    stage "MyString"
-    main_social "MyString"
-    description "MyText"
-    looking_for "MyText"
+    name 'Pokemon Menssage'
+    user 'Ash'
+    category 'Jogo'
+    location 'Japão'
+    stage 'Escala'
+    main_social 'Facebook'
+    description 'Projeto de rede de mensagens'
+    looking_for 'Desenvolvedor Ruby'
   end
 end

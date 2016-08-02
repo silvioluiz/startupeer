@@ -15,7 +15,7 @@ feature 'user create project' do
     fill_in 'Estágio',      with: project.stage
     fill_in 'Rede social',  with: project.main_social
     fill_in 'Descrição',    with: project.description
-    fill_in 'O que procura?',         with: project.looking_for
+    fill_in 'O que procura?', with: project.looking_for
 
     click_on 'Criar Projeto'
 
