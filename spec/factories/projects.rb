@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :project do
     name 'Pokemon Message'
     user 'Ash'
-    category 'Jogo'
+    category
     location 'Japão'
     stage 'Escala'
     main_social 'Facebook'

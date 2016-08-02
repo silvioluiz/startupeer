@@ -11,11 +11,11 @@ feature 'Visitor view list of projects' do
 
     expect(page).to have_css('h1', text: 'Lista de Projetos')
     expect(page).to have_link(project1.name)
-    expect(page).to have_content(project1.category)
+    expect(page).to have_content(project1.category.name)
     expect(page).to have_content(project1.location)
     expect(page).to have_content(project1.stage)
     expect(page).to have_link(project2.name)
-    expect(page).to have_content(project2.category)
+    expect(page).to have_content(project2.category.name)
     expect(page).to have_content(project2.location)
     expect(page).to have_content(project2.stage)
   end
@@ -32,7 +32,7 @@ feature 'Visitor view list of projects' do
     expect(page).to have_css('h1', text: 'Detalhes do Projetos')
     expect(page).to have_content(project.name)
     expect(page).to have_content(project.user)
-    expect(page).to have_content(project.category)
+    expect(page).to have_content(project.category.name)
     expect(page).to have_content(project.location)
     expect(page).to have_content(project.stage)
     expect(page).to have_content(project.main_social)

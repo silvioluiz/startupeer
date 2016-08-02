@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-3">
+    <aside>
+      <h4 class="list-group-item active">Cozinhas</h4>
+      <div class="list-group table-of-contents">
+        <% @categories.each do |category| %>
+          <%= link_to category.name, category, class: 'list-group-item' %>
+        <% end %>
+      </div>
+    </aside>
+  </div>
+	<div class="col-md-9">
+    <section>
+      <h1>Lista dos últimos projetos</h1>
+
+      <div><%= link_to 'Voltar', root_path , class: "btn btn-default" %></div>
+    </section>
+	</div>
+</div>
