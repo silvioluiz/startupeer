@@ -8,6 +8,7 @@ feature 'user create project' do
     project = build(:project)
 
     expect(page).to have_css('h1', text: 'Novo Projeto')
+
     fill_in 'Nome',             with: project.name
     fill_in 'Criador',          with: project.user
     fill_in 'Categoria',        with: project.category
