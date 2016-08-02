@@ -5,17 +5,17 @@ feature 'user create project' do
     visit root_path
 
     click_on 'Novo Projeto'
-    build(:project)
+    project = build(:project)
 
     expect(page).to have_css('h1', text: 'Novo Projeto')
-    fill_in 'Nome',         with: project.name
-    fill_in 'Criador',      with: project.user
-    fill_in 'Categoria',    with: project.category
-    fill_in 'Localização',  with: project.location
-    fill_in 'Estágio',      with: project.stage
-    fill_in 'Rede social',  with: project.main_social
-    fill_in 'Descrição',    with: project.description
-    fill_in 'O que procura?',         with: project.looking_for
+    fill_in 'Nome',             with: project.name
+    fill_in 'Criador',          with: project.user
+    fill_in 'Categoria',        with: project.category
+    fill_in 'Localização',      with: project.location
+    fill_in 'Estágio',          with: project.stage
+    fill_in 'Rede social',      with: project.main_social
+    fill_in 'Descrição',        with: project.description
+    fill_in 'O que procura?',   with: project.looking_for
 
     click_on 'Criar Projeto'
 
@@ -27,5 +27,25 @@ feature 'user create project' do
     expect(page).to have_content(project.main_social)
     expect(page).to have_content(project.description)
     expect(page).to have_content(project.looking_for)
+  end
+
+  scenario 'wiht invalid data' do
+    visit new_project_path
+
+    build(:project)
+
+    click_on 'Criar Projeto'
+
+    expect(page).to have_css('h1', text: 'Novo Projeto')
+    fill_in 'Nome',             with: ''
+    fill_in 'Criador',          with: ''
+    fill_in 'Categoria',        with: ''
+    fill_in 'Localização',      with: ''
+    fill_in 'Estágio',          with: ''
+    fill_in 'Rede social',      with: ''
+    fill_in 'Descrição',        with: ''
+    fill_in 'O que procura?',   with: ''
+
+    expect(page).to have_content 'Não foi possível criar projeto'
   end
 end

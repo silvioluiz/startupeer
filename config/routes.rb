@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   root 'home#index'
-  resources 'projects', only:[:new, :create]
+  resources :projects, only:[:new, :create, :show]
 end

@@ -1,0 +1,14 @@
+<section>
+  <h1>Novo Projeto</h1>
+  <%= simple_form_for @project do |f| %>
+  <%= f.input :name, label: 'Nome' %>
+  <%= f.input :user, label: 'Criador' %>
+  <%= f.input :category, label: 'Categoria' %>
+  <%= f.input :location, label: 'Localização' %>
+  <%= f.input :stage, label: 'Estágio' %>
+  <%= f.input :main_social, label: 'Rede social' %>
+  <%= f.input :description, label: 'Descrição', as: :text %>
+  <%= f.input :looking_for, label: 'O que procura?', as: :text %>
+  <%= f.button :submit, 'Criar Projeto' %>
+  <% end %>
+</section>
