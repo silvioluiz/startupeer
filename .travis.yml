@@ -13,6 +13,7 @@ deploy:
     secure: 5f71434b-b895-4703-b38f-2ffc82d03b75
   app:
     master: startupeer
+  run: "rails db:migrate"
 notifications:
   email:
     recipients:
