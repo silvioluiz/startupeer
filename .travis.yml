@@ -16,9 +16,9 @@ deploy:
 notifications:
   email:
     recipients:
-      - silvio.luiz@gmail.com
-      - patrickwreis@gmail.com
-      - marciocavarzeri@gmail.com
       - ariadyne.oliveira@yahoo.com.br
+      - marciocavarzeri@gmail.com
+      - patrickwreis@gmail.com
+      - silvio.luiz@gmail.com
     on_success: always
     on_failure: always
