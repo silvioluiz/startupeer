@@ -1,11 +1,37 @@
 <section>
-  <h1>Detalhes do Projeto <%= @project.name %></h1>
-  <div class="row"><%= link_to 'Mídia', @project.media_url %></div>
-  <div class="row"><%= @project.user %></div>
-  <div class="row"><%= @project.category.name %></div>
-  <div class="row"><%= @project.location %></div>
-  <div class="row"><%= @project.stage %></div>
-  <div class="row"><%= @project.main_social %></div>
-  <div class="row"><%= @project.description %></div>
-  <div class="row"><%= @project.looking_for %></div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h1><%= @project.name %></h1>
+            <dl class="dl-horizontal">
+                <dt>Criador:</dt>
+                <dd><%= @project.user %></dd>
+                <dt>Categoria:</dt>
+                <dd><%= @project.category.name %></dd>
+                <dt>Localização:</dt>
+                <dd><%= @project.location %></dd>
+                <dt>Estágio:</dt>
+                <dd><%= @project.stage %></dd>
+                <dt>Rede social:</dt>
+                <dd><%= @project.main_social %></dd>
+            </dl>
+
+            <div>
+                <h2>Descrição</h2>
+                <p>
+                    <%= @project.description %>
+                </p>
+            </div>
+            <div>
+                <h2>O que Procuro?</h2>
+                <p>
+                    <%= @project.looking_for %>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <%= image_tag  @project.media_url, class: "img-responsive" %>
+        </div>
+    </div>
+    <%= link_to "Ver outros projetos", root_path, class: "btn btn-primary" %>
 </section>

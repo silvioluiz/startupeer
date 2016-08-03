@@ -23,8 +23,8 @@ feature 'user create project' do
 
     click_on 'Criar Projeto'
 
-    expect(page).to have_css('h1', text: "Detalhes do Projeto #{project.name}")
-    expect(page).to have_link('Mídia', href: project.media_url)
+    expect(page).to have_css('h1', text: project.name)
+    expect(page).to have_css("img[src='#{project.media_url}']")
     expect(page).to have_content(project.user)
     expect(page).to have_content(project.category.name)
     expect(page).to have_content(project.location)
