@@ -42,7 +42,12 @@
               </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Entrar</a></li>
+              <% if user_signed_in? %>
+                <li> <span>Bem vindo <%= current_user.email %></span></li>
+                <li><%= link_to("Sair", destroy_user_session_path, method: 'delete' ) %></li>
+				      <% else %>
+                  <li><%= link_to("Entrar", new_user_session_path ) %></li>
+				        <% end %>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
