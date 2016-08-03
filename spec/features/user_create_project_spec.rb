@@ -4,14 +4,16 @@ feature 'user create project' do
   scenario 'successfully' do
     visit root_path
 
+    category = create(:category)
+    project = build(:project, category: category)
+
     click_on 'Novo Projeto'
-    project = build(:project)
 
     expect(page).to have_css('h1', text: 'Novo Projeto')
 
     fill_in 'Nome',             with: project.name
     fill_in 'Criador',          with: project.user
-    fill_in 'Categoria',        with: project.category
+    select category.name,       from: 'Categoria'
     fill_in 'Localização',      with: project.location
     fill_in 'Estágio',          with: project.stage
     fill_in 'Rede social',      with: project.main_social
@@ -22,7 +24,7 @@ feature 'user create project' do
 
     expect(page).to have_css('h1', project.name)
     expect(page).to have_content(project.user)
-    expect(page).to have_content(project.category)
+    expect(page).to have_content(project.category.name)
     expect(page).to have_content(project.location)
     expect(page).to have_content(project.stage)
     expect(page).to have_content(project.main_social)
@@ -40,7 +42,6 @@ feature 'user create project' do
     expect(page).to have_css('h1', text: 'Novo Projeto')
     fill_in 'Nome',             with: ''
     fill_in 'Criador',          with: ''
-    fill_in 'Categoria',        with: ''
     fill_in 'Localização',      with: ''
     fill_in 'Estágio',          with: ''
     fill_in 'Rede social',      with: ''

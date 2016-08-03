@@ -1,11 +1,12 @@
 class ProjectsController < ApplicationController
   def new
     @project = Project.new
+    @categories = Category.all
   end
 
   def create
     @project = Project.new(params.require(:project)
-    .permit(:name, :user, :category, :location, :stage, :main_social,
+    .permit(:name, :user, :category_id, :location, :stage, :main_social,
             :description, :looking_for))
     if @project.save
       redirect_to @project
