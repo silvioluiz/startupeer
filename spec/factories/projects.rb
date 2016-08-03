@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :project do
-    name 'Pokemon Message'
+    sequence(:name) {|n|  "Pokemon Message#{n}" }
     user 'Ash'
     category
     location 'Japão'
