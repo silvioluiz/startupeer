@@ -29,7 +29,7 @@ feature 'Visitor view list of projects' do
 
     click_on project.name
 
-    expect(page).to have_css('h1', text: 'Detalhes do Projetos')
+    expect(page).to have_css('h1', text: "Detalhes do Projeto #{project.name}")
     expect(page).to have_content(project.name)
     expect(page).to have_content(project.user)
     expect(page).to have_content(project.category.name)

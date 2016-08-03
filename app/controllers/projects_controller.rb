@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(params.require(:project)
     .permit(:name, :user, :category_id, :location, :stage, :main_social,
-            :description, :looking_for))
+            :description, :looking_for, :media_url))
     if @project.save
       redirect_to @project
     else

@@ -1,6 +1,6 @@
 <section>
-  <h1>Detalhes do Projetos</h1>
-  <div class="row"><%= @project.name %></div>
+  <h1>Detalhes do Projeto <%= @project.name %></h1>
+  <div class="row"><%= link_to 'Mídia', @project.media_url %></div>
   <div class="row"><%= @project.user %></div>
   <div class="row"><%= @project.category.name %></div>
   <div class="row"><%= @project.location %></div>

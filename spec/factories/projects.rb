@@ -8,5 +8,6 @@ FactoryGirl.define do
     main_social 'Facebook'
     description 'Projeto de rede de mensagens'
     looking_for 'Desenvolvedor Ruby'
+    media_url 'https://www.youtube.com/watch?v=_3VMeDdJdWA'
   end
 end

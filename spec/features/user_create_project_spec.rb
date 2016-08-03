@@ -19,10 +19,12 @@ feature 'user create project' do
     fill_in 'Rede social',      with: project.main_social
     fill_in 'Descrição',        with: project.description
     fill_in 'O que procura?',   with: project.looking_for
+    fill_in 'Mídia',            with: project.media_url
 
     click_on 'Criar Projeto'
 
-    expect(page).to have_css('h1', project.name)
+    expect(page).to have_css('h1', text: "Detalhes do Projeto #{project.name}")
+    expect(page).to have_link('Mídia', href: project.media_url)
     expect(page).to have_content(project.user)
     expect(page).to have_content(project.category.name)
     expect(page).to have_content(project.location)
@@ -40,14 +42,6 @@ feature 'user create project' do
     click_on 'Criar Projeto'
 
     expect(page).to have_css('h1', text: 'Novo Projeto')
-    fill_in 'Nome',             with: ''
-    fill_in 'Criador',          with: ''
-    fill_in 'Localização',      with: ''
-    fill_in 'Estágio',          with: ''
-    fill_in 'Rede social',      with: ''
-    fill_in 'Descrição',        with: ''
-    fill_in 'O que procura?',   with: ''
-
     expect(page).to have_content 'Não foi possível criar projeto'
   end
 end

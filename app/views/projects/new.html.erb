@@ -3,6 +3,7 @@
   <%= simple_form_for @project do |f| %>
   <%= f.input :name, label: 'Nome' %>
   <%= f.input :user, label: 'Criador' %>
+  <%= f.input :media_url, label: 'Mídia' %>
   <%= f.input :category_id, collection: @categories,
                             label: 'Categoria' %>
   <%= f.input :location, label: 'Localização' %>
