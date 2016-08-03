@@ -1,0 +1,24 @@
+language: ruby
+rvm:
+  - 2.3.0
+before_script:
+  - bundle exec rails db:create
+  - bundle exec rails db:migrate
+script:
+  - bundle exec rubocop
+  - bundle exec rspec spec
+deploy:
+  provider: heroku
+  api_key:
+    secure: 5f71434b-b895-4703-b38f-2ffc82d03b75
+  app:
+    master: startupeer
+notifications:
+  email:
+    recipients:
+      - silvio.luiz@gmail.com
+      - patrickwreis@gmail.com
+      - marciocavarzeri@gmail.com
+      - ariadyne.oliveira@yahoo.com.br
+    on_success: always
+    on_failure: always
