@@ -15,7 +15,7 @@ feature 'User wants to be part of a project' do
 
     expect(page).not_to have_link('Quero fazer parte')
 
-    within '#members' do
+    within '.members' do
       expect(page).to have_content(user.email)
     end
   end

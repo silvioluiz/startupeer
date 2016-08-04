@@ -6,6 +6,9 @@ feature 'user create project' do
 
     category = create(:category)
     project = build(:project, category: category)
+    user = create(:user)
+
+    login_as(user)
 
     click_on 'Novo Projeto'
 

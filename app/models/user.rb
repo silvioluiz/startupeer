@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :memberships
   has_many :projects, through: :memberships
 
-  def is_member_of?(project)
+  def member_of?(project)
     projects.include?(project)
   end
 end

@@ -33,8 +33,27 @@
             <%= image_tag  @project.media_url, class: "img-responsive" %>
         </div>
     </div>
-    <% if current_user.is_member_of?(@project) %>
-    <%= link_to "Quero fazer parte", members_project_path(@project), class: "btn btn-primary", method: :POST %>
-    <% end %>
-    <%= link_to "Ver outros projetos", root_path, class: "btn btn-primary" %>
+    <div class="row">
+        <div class="col-md-6">
+            <% if user_signed_in? %>
+              <% unless current_user.member_of?(@project) %>
+              <%= link_to "Quero fazer parte", members_project_path(@project),
+                    class: "btn btn-primary", method: :POST %>
+              <% end %>
+            <% else %>
+              <%= link_to "Quero fazer parte", new_user_registration_path,
+                class: "btn btn-primary" %>
+            <% end %>
+            <%= link_to "Ver outros projetos", root_path,
+                class: "btn btn-primary" %>
+        </div>
+        <div class="members col-md-6">
+            <h3>Participantes do Projeto</h3>
+            <ul class="list-unstyled">
+                <% @project.users.each do |user| %>
+                <li><%= user.email %></li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
 </section>
