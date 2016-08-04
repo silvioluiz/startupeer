@@ -20,14 +20,15 @@
           </p>
         </div>
       <% else %>
-        <div>
-          <%= link_to 'Criar projeto', new_project_path, class: 'btn btn-default' %>
+        <div id="projects-empty">
+            <p> Que tal ser o primeiro a criar um projeto? </p>
+            <%= link_to 'Criar projeto', new_project_path, class: 'btn btn-default' %>
         </div>
       <% end %>
     </section>
   </div>
   <div class="col-md-4">
-  CONTEUDO
+  
 </div>
 </div>
 

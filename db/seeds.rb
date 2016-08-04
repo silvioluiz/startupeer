@@ -2,7 +2,7 @@ category = Category.create(name: 'Jogos digitais')
 user = User.create(email: 'jon@campuscode.com.br', password: '12345678')
 
 Project.create(name: 'Pokemon Message',
-               user: user,
+               owner: user,
                category: category,
                location: 'Japão',
                stage: 'Escala',
@@ -12,7 +12,7 @@ Project.create(name: 'Pokemon Message',
                media_url: 'http://www.e11.com.br/wp-content/uploads/2015/05/STARTUP1.jpg')
 
 Project.create(name: 'Startup Media',
-              user: user,
+              owner: user,
               category: category,
               location: 'São Paulo',
               stage: 'Escala',

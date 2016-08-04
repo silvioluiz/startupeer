@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
+
   def new
     @project = Project.new
     @categories = Category.all
