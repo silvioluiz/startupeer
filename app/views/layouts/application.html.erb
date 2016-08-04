@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
   <head>
     <title>Startupeer</title>
     <%= csrf_meta_tags %>
@@ -43,7 +43,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <% if user_signed_in? %>
-                <span>Bem vindo <%= current_user.email %></span>
+                <p class="navbar-text navbar-right"><strong>Bem vindo <%= current_user.email %></strong></p>
                 <li><%= link_to("Sair", destroy_user_session_path, method: 'delete' ) %></li>
 				      <% else %>
                   <li><%= link_to("Entrar", new_user_session_path ) %></li>
