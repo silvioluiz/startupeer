@@ -26,8 +26,8 @@ feature 'Visitant view project' do
       click_on 'Gostei'
     end
 
-    expect(page).to have_css('h1', text: "Detalhes do Projeto #{project1.name}")
-    expect(page).to have_link('Mídia', href: project1.media_url)
+    expect(page).to have_css('h1', text: project1.name)
+    expect(page).to have_xpath("//img[@src=\"#{project1.media_url}\"]")
     expect(page).to have_content(project1.user)
     expect(page).to have_content(project1.category.name)
     expect(page).to have_content(project1.location)
