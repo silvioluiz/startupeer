@@ -31,7 +31,7 @@ feature 'Visitor view list of projects' do
 
     expect(page).to have_css('h1', text: project.name)
     expect(page).to have_content(project.name)
-    expect(page).to have_content(project.user)
+    expect(page).to have_content(project.owner.email)
     expect(page).to have_content(project.category.name)
     expect(page).to have_content(project.location)
     expect(page).to have_content(project.stage)

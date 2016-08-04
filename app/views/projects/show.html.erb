@@ -5,7 +5,7 @@
             <h1><%= @project.name %></h1>
             <dl class="dl-horizontal">
                 <dt>Criador:</dt>
-                <dd><%= @project.user %></dd>
+                <dd><%= @project.owner.email %></dd>
                 <dt>Categoria:</dt>
                 <dd><%= @project.category.name %></dd>
                 <dt>Localização:</dt>

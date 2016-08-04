@@ -15,7 +15,6 @@ feature 'user create project' do
     expect(page).to have_css('h1', text: 'Novo Projeto')
 
     fill_in 'Nome',             with: project.name
-    fill_in 'Criador',          with: project.user
     select category.name,       from: 'Categoria'
     fill_in 'Localização',      with: project.location
     fill_in 'Estágio',          with: project.stage
@@ -28,7 +27,7 @@ feature 'user create project' do
 
     expect(page).to have_css('h1', text: project.name)
     expect(page).to have_css("img[src='#{project.media_url}']")
-    expect(page).to have_content(project.user)
+    expect(page).to have_content(user.email)
     expect(page).to have_content(project.category.name)
     expect(page).to have_content(project.location)
     expect(page).to have_content(project.stage)

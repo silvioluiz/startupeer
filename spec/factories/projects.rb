@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :project do
     sequence(:name) { |n| "Pokemon Message#{n}" }
-    user
+    association :owner, factory: :user
     category
     location 'Japão'
     stage 'Escala'
