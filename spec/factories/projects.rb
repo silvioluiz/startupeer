@@ -1,13 +1,13 @@
 FactoryGirl.define do
   factory :project do
-    sequence(:name) {|n|  "Pokemon Message#{n}" }
-    user 'Ash'
+    sequence(:name) { |n| "Pokemon Message#{n}" }
+    user
     category
     location 'Japão'
     stage 'Escala'
     main_social 'Facebook'
     description 'Projeto de rede de mensagens'
     looking_for 'Desenvolvedor Ruby'
-    media_url 'https://www.youtube.com/watch?v=_3VMeDdJdWA'
+    media_url 'http://www.e11.com.br/wp-content/uploads/2015/05/STARTUP1.jpg'
   end
 end

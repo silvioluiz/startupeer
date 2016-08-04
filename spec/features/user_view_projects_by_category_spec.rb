@@ -7,7 +7,7 @@ feature 'User view a list of projects by category' do
 
     visit root_path
 
-    within('aside') do
+    within('footer') do
       click_on project.category.name
     end
 
@@ -25,7 +25,7 @@ feature 'User view a list of projects by category' do
 
     visit root_path
 
-    within('aside') do
+    within('footer') do
       click_on category.name
     end
 
