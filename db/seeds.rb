@@ -1,7 +1,22 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+category = Category.create(name: 'Jogos digitais')
+user = User.create(email: 'jon@campuscode.com.br', password: '12345678')
+
+Project.create(name: 'Pokemon Message',
+               user: user,
+               category: category,
+               location: 'Japão',
+               stage: 'Escala',
+               main_social: 'Facebook',
+               description: 'Projeto de rede de mensagens',
+               looking_for: 'Desenvolvedor Ruby',
+               media_url: 'http://www.e11.com.br/wp-content/uploads/2015/05/STARTUP1.jpg')
+
+Project.create(name: 'Startup Media',
+              user: user,
+              category: category,
+              location: 'São Paulo',
+              stage: 'Escala',
+              main_social: 'Orkut',
+              description: 'Projeto de startups de pokemon go',
+              looking_for: 'Desenvolvedor Go',
+              media_url: 'http://www.e11.com.br/wp-content/uploads/2015/05/STARTUP1.jpg')
