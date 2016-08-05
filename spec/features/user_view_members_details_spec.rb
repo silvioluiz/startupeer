@@ -28,7 +28,7 @@ feature 'User view members details' do
     login_as(user)
 
     visit project_path(project)
-    
+
     within '#members-list' do
       expect(page).not_to have_link(user.email)
     end
@@ -46,5 +46,4 @@ feature 'User view members details' do
       expect(page).not_to have_link(user.email)
     end
   end
-
 end
