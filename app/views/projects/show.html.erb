@@ -54,7 +54,7 @@
                 <% @project.memberships.each do |member| %>
                     <% unless member.pending?  && current_user != @project.owner %>
                         <% unless member.reject? %>
-                            <li><%= link_to member.user.email, [@project, member], remote: true %></li>
+                            <li><%= link_to member.user.email, [@project, member], remote: true %> <%= member.status.capitalize %></li>
                         <% end %>
                     <% end %>
                 <% end %>
