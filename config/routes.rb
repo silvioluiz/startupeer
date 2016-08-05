@@ -4,5 +4,10 @@ Rails.application.routes.draw do
   resources :projects, only:[:index, :new, :show, :create] do
     resources :memberships, only: [:create]
   end
+  resources :memberships, only: [:show] do
+    member do
+      post 'approve'
+    end
+  end
   resources :categories, only:[:show]
 end

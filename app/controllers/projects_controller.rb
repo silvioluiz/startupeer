@@ -21,7 +21,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @membership = @project.memberships.new
+    @membership = Membership.new
   end
 
   def index

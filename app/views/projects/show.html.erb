@@ -51,8 +51,13 @@
         <div class="members col-md-6">
             <h3>Participantes do Projeto</h3>
             <ul class="list-unstyled">
-                <% @project.users.each do |user| %>
-                <li><%= user.email %></li>
+                <% @project.memberships.each do |member| %>
+                  <li><%= member.user.email %></li>
+                  <% if member.approved? %>
+                    <p>Aprovado</p>
+                  <% else %>
+                    <li> <%= link_to "Aprovar", approve_membership_path(member), method: :post %> </li>
+                  <% end %>
                 <% end %>
             </ul>
         </div>
