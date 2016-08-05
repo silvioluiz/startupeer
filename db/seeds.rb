@@ -1,5 +1,5 @@
 category = Category.create(name: 'Jogos digitais')
-user = User.create(email: 'jon@campuscode.com.br', password: '12345678')
+user = User.create(email: 'user@email.com.br', password: '12345678')
 
 Project.create(name: 'Pokemon Message',
                owner: user,

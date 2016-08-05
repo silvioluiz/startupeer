@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     member do
       post 'members', to: 'projects#new_member'
     end
+    resources :memberships, only: [:create]
   end
   resources :categories, only:[:show]
 end
