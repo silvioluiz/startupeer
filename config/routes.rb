@@ -8,5 +8,10 @@ Rails.application.routes.draw do
     end
     resources :memberships, only: [:create]
   end
+  resources :memberships, only: [:show] do
+    member do
+      post 'approve'
+    end
+  end
   resources :categories, only:[:show]
 end

@@ -14,4 +14,10 @@ class MembershipsController < ApplicationController
     flash[:notice] = 'Partipação pendente de aprovação!' if membership.save
     redirect_to project
   end
+
+  def approve
+    @membership = Membership.find(params[:id])
+    @membership.approved!
+    redirect_to @membership.project
+  end
 end
