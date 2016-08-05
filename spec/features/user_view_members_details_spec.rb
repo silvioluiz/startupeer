@@ -5,7 +5,8 @@ feature 'User view members details' do
     owner = create(:user)
     project = create(:project, owner: owner)
     user = create(:user)
-    project.memberships.create(user: user)
+    membership = create(:membership, user: user, project: project)
+    project.memberships << membership
 
     login_as owner
     visit project_path(project)
@@ -14,6 +15,9 @@ feature 'User view members details' do
 
     within '#member-details' do
       expect(page).to have_content(user.email)
+      expect(page).to have_content(membership.role)
+      expect(page).to have_content(membership.portifolio)
+      expect(page).to have_content(membership.reason)
       expect(page).to have_link('Aprovar')
       expect(page).to have_link('Reprovar')
     end

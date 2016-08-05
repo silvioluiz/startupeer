@@ -1,5 +1,23 @@
 <h1><%= @membership.user.email %></h1>
+<dl class="dl-horizontal">
+                <dt>Papel:</dt>
+                <dd><%= @membership.role %></dd>
+                <dt>Portfólio:</dt>
+                <dd><%= @membership.portifolio %></dd>
+                <dt>Por que participar?</dt>
+                <dd><%= @membership.reason %></dd>
+            </dl>
 <% if user_signed_in? && current_user == @membership.project.owner %>
-	<%= link_to "Aprovar", approve_membership_path(@membership.id), method: :post %>
-	<%= link_to "Reprovar", reject_membership_path(@membership.id), method: :post %>
+<p class="text-center">
+	<%= link_to approve_membership_path(@membership.id), 
+		class: 'btn btn-success btn-lg', method: :post do %>
+		<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+		Aprovar
+	<% end %>
+	<%= link_to reject_membership_path(@membership.id), 
+		class: 'btn btn-danger btn-lg', method: :post do %>
+		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+		Reprovar
+	<% end %>
+</p>
 <% end %>

@@ -5,5 +5,6 @@ FactoryGirl.define do
     role 'Desenvolvedor'
     reason 'Sei programar muito'
     portifolio 'github.com/campuscode'
+    status Membership.statuses[:pending]
   end
 end
