@@ -20,4 +20,11 @@ class MembershipsController < ApplicationController
     @membership.approved!
     redirect_to @membership.project
   end
+
+  def reject
+    @membership = Membership.find(params[:id])
+    @membership.reject!
+
+    redirect_to @membership.project
+  end
 end

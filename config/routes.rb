@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :memberships, only: [:show] do
     member do
       post 'approve'
+      post 'reject'
     end
   end
   resources :categories, only:[:show]

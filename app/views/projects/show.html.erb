@@ -50,15 +50,13 @@
         </div>
         <div class="members col-md-6">
             <h3>Participantes do Projeto</h3>
-            <ul class="list-unstyled">
+            <ul id="members-list" class="list-unstyled">
                 <% @project.memberships.each do |member| %>
-                <li><%= link_to member.user.email, [@project, member], remote: true %></li>
-                  <li><%= member.user.email %></li>
-                  <% if member.approved? %>
-                    <p>Aprovado</p>
-                  <% else %>
-                    <li> <%= link_to "Aprovar", approve_membership_path(member), method: :post %> </li>
-                  <% end %>
+                    <% unless member.pending?  && current_user != @project.owner %>
+                        <% unless member.reject? %>
+                            <li><%= link_to member.user.email, [@project, member], remote: true %></li>
+                        <% end %>
+                    <% end %>
                 <% end %>
             </ul>
             <div  id="member-modal" class="modal fade" tabindex="-1" role="dialog">

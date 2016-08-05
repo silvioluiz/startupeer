@@ -1,1 +1,5 @@
 <h1><%= @membership.user.email %></h1>
+<% if user_signed_in? && current_user == @membership.project.owner %>
+	<%= link_to "Aprovar", approve_membership_path(@membership.id), method: :post %>
+	<%= link_to "Reprovar", reject_membership_path(@membership.id), method: :post %>
+<% end %>

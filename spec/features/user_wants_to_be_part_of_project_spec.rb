@@ -22,8 +22,5 @@ feature 'User wants to be part of a project' do
     expect(page).not_to have_link('Quero fazer parte')
     expect(page).to have_content('Partipação pendente de aprovação!')
 
-    within '.members' do
-      expect(page).to have_content(user.email)
-    end
   end
 end
