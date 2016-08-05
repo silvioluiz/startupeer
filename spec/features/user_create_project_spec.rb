@@ -2,13 +2,12 @@ require 'rails_helper'
 
 feature 'user create project' do
   scenario 'successfully' do
-    visit root_path
-
     category = create(:category)
     project = build(:project, category: category)
     user = create(:user)
 
     login_as(user)
+    visit root_path
 
     click_on 'Novo Projeto'
 
@@ -37,6 +36,8 @@ feature 'user create project' do
   end
 
   scenario 'wiht invalid data' do
+    user = create(:user)
+    login_as(user)
     visit new_project_path
 
     build(:project)
@@ -45,5 +46,11 @@ feature 'user create project' do
 
     expect(page).to have_css('h1', text: 'Novo Projeto')
     expect(page).to have_content 'Não foi possível criar projeto'
+  end
+
+  scenario 'must be authenticated' do
+    visit root_path
+
+    expect(page).not_to have_link('Novo Projeto')
   end
 end
