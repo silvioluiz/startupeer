@@ -29,14 +29,14 @@ Project.create(name: 'Pokemon Messenger',
 Project.create(name: 'Digimon O retorno',
                owner: owner1,
                category: games_category,
-               location: 'Japão',
+               location: 'Coréia do Sul',
                stage: 'Ideação',
                main_social: 'Facebook',
                description: 'O objetivo do Projeto é ressuscitar o Digimon após o sucesso do Pokemon GO',
                looking_for: 'Desenvolvedor Ruby',
                media_url: 'https://advdmo.files.wordpress.com/2015/09/maxresdefault.jpg')
 
-Project.create(name: 'Startup Media',
+Project.create(name: 'Controle Financeiro',
               owner: owner2,
               category: fintech_category,
               location: 'Salvador',
@@ -46,12 +46,35 @@ Project.create(name: 'Startup Media',
               looking_for: 'Desenvolvedor Go',
               media_url: 'http://www.e11.com.br/wp-content/uploads/2015/05/STARTUP1.jpg')
 
+Project.create(name: 'OldBank',
+              owner: owner2,
+              category: fintech_category,
+              location: 'Salvador',
+              stage: 'Validação',
+              main_social: 'Facebook',
+              description: 'Sucessor vintage do Nubank',
+              looking_for: 'Desenvolvedor Ruby, Designer',
+              media_url: 'http://www.fatonotorio.com.br/upload/dn_noticia/2015/08/banco.jpg')
+
+
 Project.create(name: 'Bazar do Condominio',
               owner: owner2,
               category: ecommerce_category,
               location: 'São Paulo',
               stage: 'Validação',
               main_social: 'Orkut',
-              description: 'Projeto de startups de pokemon go',
+              description: 'Projeto de Bazar do Condomínio',
               looking_for: 'Desenvolvedor Go',
               media_url: 'http://www.e11.com.br/wp-content/uploads/2015/05/STARTUP1.jpg')
+
+
+Project.create(name: 'Quitanda Online',
+              owner: owner2,
+              category: ecommerce_category,
+              location: 'Porto Velho',
+              stage: 'Escala',
+              main_social: 'Orkut',
+              description: 'Projeto de Quitanda Online',
+              looking_for: 'Designer, Comercial',
+              media_url: 'http://www.pegpese.com.br/imagens/backs/05.jpg')
+
