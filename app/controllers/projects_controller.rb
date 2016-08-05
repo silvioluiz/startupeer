@@ -19,15 +19,10 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @membership = @project.memberships.new
   end
 
   def index
     @projects = Project.all
-  end
-
-  def new_member
-    @project = Project.find(params[:id])
-    @project.users << current_user
-    redirect_to @project
   end
 end
