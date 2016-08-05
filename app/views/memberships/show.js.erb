@@ -1,0 +1,3 @@
+$("#member-details").empty();
+$("<%= escape_javascript(render @membership) %>").appendTo("#member-details");
+$('#member-modal').modal();
